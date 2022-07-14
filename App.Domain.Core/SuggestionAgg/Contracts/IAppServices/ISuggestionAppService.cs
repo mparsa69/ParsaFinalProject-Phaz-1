@@ -1,0 +1,21 @@
+﻿using App.Domain.Core.SuggestionAgg.Dtos;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace App.Domain.Core.SuggestionAgg.Contracts.IAppServices
+{
+    public interface ISuggestionAppService
+    {
+        Task Add(SuggestionDto model);
+        Task Update(SuggestionDto model);
+        Task Delete(int id);
+
+        Task<List<SuggestionDto>>? GetAllAsync();
+        List<SuggestionDto> GetAll();
+        Task<SuggestionDto>? Get(int id);
+        Task<SuggestionDto>? Get(string name);
+    }
+}
